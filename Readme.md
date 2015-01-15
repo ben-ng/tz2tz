@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ben-ng/tz2tz.svg?branch=master)](https://travis-ci.org/ben-ng/tz2tz)
+
 ## Disclaimer
 
 Honestly I'm just writing this so that I can require it without relative file paths in my projects.
