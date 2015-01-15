@@ -19,8 +19,18 @@ var z = require('tz2tz')
 z(timestamp, 'America/Los_Angeles', 'ddd MMM D')
 
 // Shorthandy goodness
-z.d(timestamp, 'America/Los_Angeles') // Uses 'ddd MMM D' as format e.g. Thu Jan 15
-z.t(timestamp, 'America/Los_Angeles') // Uses 'h:mmA' as format e.g. 6:05AM
+
+// d for "date" e.g. Thu Jan 15
+// Uses 'ddd MMM D' as format
+z.d(timestamp, 'America/Los_Angeles')
+
+// t for "time" e.g. 6:05AM
+// Uses 'h:mmA' as format
+z.t(timestamp, 'America/Los_Angeles')
+
+// f for "full" e.g. Thu, Jan 15, 2015 6:05 AM
+// Uses preferred locale format
+z.f(timestamp, 'America/Los_Angeles')
 
 // Change the shorthand constants
 z.constants.timeFormat = 'h:mm a'
