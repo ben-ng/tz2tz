@@ -1,0 +1,30 @@
+{
+  "name": "tz2tz",
+  "version": "1.0.0",
+  "description": "Shorthand for common timezone operations",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ben-ng/tz2tz.git"
+  },
+  "keywords": [
+    "timezone",
+    "utility",
+    "shorthand"
+  ],
+  "author": "Ben Ng <me@benng.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ben-ng/tz2tz/issues"
+  },
+  "homepage": "https://github.com/ben-ng/tz2tz",
+  "dependencies": {
+    "moment-timezone": "^0.3.0"
+  },
+  "devDependencies": {
+    "tape": "^3.0.3"
+  }
+}
