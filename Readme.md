@@ -32,6 +32,9 @@ z.t(timestamp, 'America/Los_Angeles')
 // Uses preferred locale format
 z.f(timestamp, 'America/Los_Angeles')
 
+// day e.g. Thursday
+z.day(timestamp, 'America/Los_Angeles')
+
 // Change the shorthand constants
 z.constants.timeFormat = 'h:mm a'
 ```

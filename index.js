@@ -17,6 +17,7 @@ tz2tz.constants = {
   dateFormat: 'ddd MMM D'
 , timeFormat: 'h:mmA'
 , fullFormat: 'llll'
+, dayFormat: 'dddd'
 }
 
 tz2tz.d = function tz2tz_date (timestamp, timezone) {
@@ -29,6 +30,10 @@ tz2tz.t = function tz2tz_time (timestamp, timezone) {
 
 tz2tz.f = function tz2tz_full (timestamp, timezone) {
   return tz2tz(timestamp, timezone, tz2tz.constants.fullFormat)
+}
+
+tz2tz.day = function tz2tz_day (timestamp, timezone) {
+  return tz2tz(timestamp, timezone, tz2tz.constants.dayFormat)
 }
 
 module.exports = tz2tz
