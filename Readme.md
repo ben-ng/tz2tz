@@ -28,6 +28,9 @@ z.d(timestamp, 'America/Los_Angeles')
 // Uses 'h:mmA' as format
 z.t(timestamp, 'America/Los_Angeles')
 
+// s for "short" e.g. 6:05AM 1/15/15
+z.s(timestamp, 'America/Los_Angeles')
+
 // f for "full" e.g. Thu, Jan 15, 2015 6:05 AM
 // Uses preferred locale format
 z.f(timestamp, 'America/Los_Angeles')

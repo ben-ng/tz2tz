@@ -24,6 +24,7 @@ tz2tz.constants = {
   dateFormat: 'ddd MMM D'
 , timeFormat: 'h:mmA'
 , fullFormat: 'llll'
+, shortFormat: 'h:mmA M/D/YY'
 , dayFormat: 'dddd'
 }
 
@@ -33,6 +34,10 @@ tz2tz.d = function tz2tz_date (timestamp, timezone) {
 
 tz2tz.t = function tz2tz_time (timestamp, timezone) {
   return tz2tz(timestamp, timezone, tz2tz.constants.timeFormat)
+}
+
+tz2tz.s = function tz2tz_full (timestamp, timezone) {
+  return tz2tz(timestamp, timezone, tz2tz.constants.shortFormat)
 }
 
 tz2tz.f = function tz2tz_full (timestamp, timezone) {
