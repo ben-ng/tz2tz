@@ -2,8 +2,9 @@ var test = require('tape')
   , z = require('./')
 
 test('tz2tz', function (t) {
-  t.plan(6)
+  t.plan(7)
 
+  t.equal(z(new Date(1421330745258), 'America/Los_Angeles', 'ddd MMM D'), 'Thu Jan 15')
   t.equal(z(1421330745258, 'America/Los_Angeles', 'ddd MMM D'), 'Thu Jan 15')
   t.equal(z.d(1421330745258, 'America/Los_Angeles'), 'Thu Jan 15')
   t.equal(z.t(1421330745258, 'America/Los_Angeles'), '6:05AM')
