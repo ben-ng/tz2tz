@@ -22,21 +22,21 @@ z(timestamp, 'America/Los_Angeles', 'ddd MMM D')
 
 // d for "date" e.g. Thu Jan 15
 // Uses 'ddd MMM D' as format
-z.d(timestamp, 'America/Los_Angeles')
+z.getDate(timestamp, 'America/Los_Angeles')
 
 // t for "time" e.g. 6:05AM
 // Uses 'h:mmA' as format
-z.t(timestamp, 'America/Los_Angeles')
+z.getTime(timestamp, 'America/Los_Angeles')
 
 // s for "short" e.g. 6:05AM 1/15/15
-z.s(timestamp, 'America/Los_Angeles')
+z.getShort(timestamp, 'America/Los_Angeles')
 
 // f for "full" e.g. Thu, Jan 15, 2015 6:05 AM
 // Uses preferred locale format
-z.f(timestamp, 'America/Los_Angeles')
+z.getFull(timestamp, 'America/Los_Angeles')
 
 // day e.g. Thursday
-z.day(timestamp, 'America/Los_Angeles')
+z.getDay(timestamp, 'America/Los_Angeles')
 
 // Change the shorthand constants
 z.constants.timeFormat = 'h:mm a'
