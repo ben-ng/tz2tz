@@ -2,7 +2,7 @@ var test = require('tape')
   , z = require('./')
 
 test('tz2tz', function (t) {
-  t.plan(8)
+  t.plan(10)
 
   t.equal(z(new Date(1421330745258), 'America/Los_Angeles', 'ddd MMM D'), 'Thu Jan 15')
   t.equal(z(1421330745258, 'America/Los_Angeles', 'ddd MMM D'), 'Thu Jan 15')
@@ -12,6 +12,9 @@ test('tz2tz', function (t) {
   t.equal(z.getShort(1421330745258, 'America/Los_Angeles'), '6:05AM 1/15/15')
 
   t.equal(z.getDay(1421330745258, 'America/Los_Angeles'), 'Thursday')
+
+  t.strictEqual(z.getHours(1421330745258, 'America/Los_Angeles'), 6)
+  t.strictEqual(z.getMinutes(1421330745258, 'America/Los_Angeles'), 5)
 
   z.constants.timeFormat = 'h:mm a'
   t.equal(z.getTime(1421330745258, 'America/Los_Angeles'), '6:05 am')

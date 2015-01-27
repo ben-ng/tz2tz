@@ -48,4 +48,12 @@ tz2tz.getDay = function tz2tz_day (timestamp, timezone) {
   return tz2tz(timestamp, timezone, tz2tz.constants.dayFormat)
 }
 
+tz2tz.getHours = function tz2tz_hours (timestamp, timezone) {
+  return parseInt(tz2tz(timestamp, timezone, 'H'), 10)
+}
+
+tz2tz.getMinutes = function tz2tz_minutes (timestamp, timezone) {
+  return parseInt(tz2tz(timestamp, timezone, 'm'), 10)
+}
+
 module.exports = tz2tz

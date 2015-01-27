@@ -20,23 +20,29 @@ z(timestamp, 'America/Los_Angeles', 'ddd MMM D')
 
 // Shorthandy goodness
 
-// d for "date" e.g. Thu Jan 15
+// Thu Jan 15
 // Uses 'ddd MMM D' as format
 z.getDate(timestamp, 'America/Los_Angeles')
 
-// t for "time" e.g. 6:05AM
+// 6:05AM
 // Uses 'h:mmA' as format
 z.getTime(timestamp, 'America/Los_Angeles')
 
-// s for "short" e.g. 6:05AM 1/15/15
+// 6:05AM 1/15/15
 z.getShort(timestamp, 'America/Los_Angeles')
 
-// f for "full" e.g. Thu, Jan 15, 2015 6:05 AM
+// Thu, Jan 15, 2015 6:05 AM
 // Uses preferred locale format
 z.getFull(timestamp, 'America/Los_Angeles')
 
-// day e.g. Thursday
+// Thursday
 z.getDay(timestamp, 'America/Los_Angeles')
+
+// 6 (integer)
+z.getHours(timestamp, 'America/Los_Angeles')
+
+// 5 (integer)
+z.getMinutes(timestamp, 'America/Los_Angeles')
 
 // Change the shorthand constants
 z.constants.timeFormat = 'h:mm a'
