@@ -1,6 +1,9 @@
 var moment = require('moment-timezone')
 
-function tz2tz (timestamp, timezone, format) {
+function tz2tz (timestamp, timezone, format, opts) {
+  var converted
+  opts = opts || {}
+
   if(typeof timestamp == 'object') {
     if(isNaN(timestamp.getHours()))
       throw new Error('Invalid date object: ' + timestamp)
@@ -17,7 +20,9 @@ function tz2tz (timestamp, timezone, format) {
   if(moment.tz.zone(timezone) == null)
     throw new Error('The timezone does not exist or has not been loaded: ' + JSON.stringify(timezone))
 
-  return moment.tz(timestamp, timezone).tz(timezone).format(format)
+  converted = moment.tz(timestamp, timezone).tz(timezone)
+
+  return converted.format(format) + (opts.showTz === false ? '' : ' ' + converted.format('z'))
 }
 
 tz2tz.constants = {
@@ -28,32 +33,32 @@ tz2tz.constants = {
 , dayFormat: 'dddd'
 }
 
-tz2tz.getDate = function tz2tz_date (timestamp, timezone) {
-  return tz2tz(timestamp, timezone, tz2tz.constants.dateFormat)
+tz2tz.getDate = function tz2tz_date (timestamp, timezone, opts) {
+  return tz2tz(timestamp, timezone, tz2tz.constants.dateFormat, opts)
 }
 
-tz2tz.getTime = function tz2tz_time (timestamp, timezone) {
-  return tz2tz(timestamp, timezone, tz2tz.constants.timeFormat)
+tz2tz.getTime = function tz2tz_time (timestamp, timezone, opts) {
+  return tz2tz(timestamp, timezone, tz2tz.constants.timeFormat, opts)
 }
 
-tz2tz.getShort = function tz2tz_short (timestamp, timezone) {
-  return tz2tz(timestamp, timezone, tz2tz.constants.shortFormat)
+tz2tz.getShort = function tz2tz_short (timestamp, timezone, opts) {
+  return tz2tz(timestamp, timezone, tz2tz.constants.shortFormat, opts)
 }
 
-tz2tz.getFull = function tz2tz_full (timestamp, timezone) {
-  return tz2tz(timestamp, timezone, tz2tz.constants.fullFormat)
+tz2tz.getFull = function tz2tz_full (timestamp, timezone, opts) {
+  return tz2tz(timestamp, timezone, tz2tz.constants.fullFormat, opts)
 }
 
 tz2tz.getDay = function tz2tz_day (timestamp, timezone) {
-  return tz2tz(timestamp, timezone, tz2tz.constants.dayFormat)
+  return tz2tz(timestamp, timezone, tz2tz.constants.dayFormat, {showTz: false})
 }
 
 tz2tz.getHours = function tz2tz_hours (timestamp, timezone) {
-  return parseInt(tz2tz(timestamp, timezone, 'H'), 10)
+  return parseInt(tz2tz(timestamp, timezone, 'H', {showTz: false}), 10)
 }
 
 tz2tz.getMinutes = function tz2tz_minutes (timestamp, timezone) {
-  return parseInt(tz2tz(timestamp, timezone, 'm'), 10)
+  return parseInt(tz2tz(timestamp, timezone, 'm', {showTz: false}), 10)
 }
 
 module.exports = tz2tz
