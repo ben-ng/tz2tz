@@ -1,4 +1,5 @@
 var moment = require('moment-timezone')
+  , defaults = require('lodash.defaults')
 
 function tz2tz (timestamp, timezone, format, opts) {
   var converted
@@ -34,6 +35,7 @@ tz2tz.constants = {
 }
 
 tz2tz.getDate = function tz2tz_date (timestamp, timezone, opts) {
+  opts = defaults(opts || {}, {showTz: false})
   return tz2tz(timestamp, timezone, tz2tz.constants.dateFormat, opts)
 }
 
@@ -49,8 +51,9 @@ tz2tz.getFull = function tz2tz_full (timestamp, timezone, opts) {
   return tz2tz(timestamp, timezone, tz2tz.constants.fullFormat, opts)
 }
 
-tz2tz.getDay = function tz2tz_day (timestamp, timezone) {
-  return tz2tz(timestamp, timezone, tz2tz.constants.dayFormat, {showTz: false})
+tz2tz.getDay = function tz2tz_day (timestamp, timezone, opts) {
+  opts = defaults(opts || {}, {showTz: false})
+  return tz2tz(timestamp, timezone, tz2tz.constants.dayFormat, opts)
 }
 
 tz2tz.getHours = function tz2tz_hours (timestamp, timezone) {

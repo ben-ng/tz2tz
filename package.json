@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/ben-ng/tz2tz",
   "dependencies": {
+    "lodash.defaults": "^3.0.0",
     "moment-timezone": "^0.3.0"
   },
   "devDependencies": {
