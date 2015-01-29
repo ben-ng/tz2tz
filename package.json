@@ -1,6 +1,6 @@
 {
   "name": "tz2tz",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Shorthand for common timezone operations",
   "main": "index.js",
   "scripts": {
