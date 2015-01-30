@@ -12,7 +12,7 @@ function tz2tz (timestamp, timezone, format, opts) {
       timestamp = timestamp.valueOf()
   }
 
-  if(typeof timestamp != 'number' || Number.isNaN(timestamp) || timestamp < 0)
+  if(typeof timestamp != 'number' || isNaN(timestamp) || timestamp < 0)
     throw new Error('Invalid timestamp: ' + JSON.stringify(timestamp))
 
   if(typeof timezone != 'string')
